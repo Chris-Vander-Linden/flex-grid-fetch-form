@@ -1,0 +1,18 @@
+{
+  "name": "Boilerplate Project",
+  "version": "1.0.0",
+  "description": "This is a project for creating a boilerplate.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": ["boilerplate", "base"],
+  "author": "Chris Vander Linden",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.5.0",
+    "parcel": "^2.5.0",
+    "sass": "^1.51.0"
+  }
+}

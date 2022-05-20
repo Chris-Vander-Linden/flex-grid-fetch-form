@@ -1,0 +1,26 @@
+@use "scss/utilities/utilities-dir" as *;
+@use "scss/base/base-dir" as *;
+
+html {
+  // test to make sure var file is connected
+  background-color: $test-var;
+}
+
+body {
+  min-height: 100vh;
+
+  // make sure breakpoints are working in browser
+  border: 5px solid black;
+  @include tablet-portrait-size {
+    border: 5px solid red;
+  }
+  @include tablet-landscape-size {
+    border: 5px solid blue;
+  }
+  @include laptop-size {
+    border: 5px solid green;
+  }
+  @include desktop-size {
+    border: 5px solid yellow;
+  }
+}

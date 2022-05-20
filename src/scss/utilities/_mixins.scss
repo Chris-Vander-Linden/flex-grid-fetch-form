@@ -1,0 +1,38 @@
+@use "functions" as *;
+
+// media queries
+
+/* Extra small devices (phones, 600px and down) */
+@mixin phone-size {
+  @media only screen and (max-width: pixels-to-rem(600px)) {
+    @content;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@mixin tablet-portrait-size {
+  @media only screen and (min-width: pixels-to-rem(600px)) {
+    @content;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@mixin tablet-landscape-size {
+  @media only screen and (min-width: pixels-to-rem(768px)) {
+    @content;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@mixin laptop-size {
+  @media only screen and (min-width: pixels-to-rem(992px)) {
+    @content;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@mixin desktop-size {
+  @media only screen and (min-width: pixels-to-rem(1200px)) {
+    @content;
+  }
+}
