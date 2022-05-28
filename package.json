@@ -3,7 +3,8 @@
   "source": "src/index.html",
   "version": "1.0.0",
   "description": "This is a project for practicing grid and flex layouts while also working with fetching and creating data",
-  "main": "index.js",
+  "source": "src/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
