@@ -2,5 +2,12 @@
 
 // convert pixels to rem
 @function pixels-to-rem($pixel-size) {
-  @return "#{math.div($pixel-size, 16px)}rem";
+  @return #{math.div($pixel-size, 16px)}rem;
+}
+
+// insert this function in @mixin themes to get values of colors from theme map
+$theme-map: null;
+
+@function get-theme($key) {
+  @return map-get($theme-map, $key);
 }

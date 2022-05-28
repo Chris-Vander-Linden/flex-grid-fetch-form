@@ -1,13 +1,18 @@
 {
-  "name": "Boilerplate Project",
+  "name": "grid-flex-form-project",
+  "source": "src/index.html",
   "version": "1.0.0",
-  "description": "This is a project for creating a boilerplate.",
+  "description": "This is a project for practicing grid and flex layouts while also working with fetching and creating data",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
-  "keywords": ["boilerplate", "base"],
+  "keywords": [
+    "flex",
+    "grid",
+    "fetch"
+  ],
   "author": "Chris Vander Linden",
   "license": "ISC",
   "devDependencies": {

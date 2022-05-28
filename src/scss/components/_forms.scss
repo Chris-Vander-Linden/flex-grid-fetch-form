@@ -1,0 +1,67 @@
+@use "../utilities/mixins" as *;
+@use "../utilities/functions" as *;
+
+#create-form-container {
+  @include themes() {
+    color: get-theme(text-color);
+    background-color: get-theme(fourth-color);
+  }
+
+  @include border-theme(#000);
+  grid-area: form;
+
+  @include tablet-landscape-size {
+    min-height: 80vh;
+  }
+}
+
+
+// might be able to be EXTENDED??????
+form {
+  position: sticky;
+  top: pixels-to-rem(43px);
+
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: 5px;
+  padding: pixels-to-rem(5px);
+
+  #create-form-container & {
+    padding-bottom: 0px;
+  }
+
+
+
+  input,
+  textarea,
+  select,
+  [type="submit"] {
+    @include border-theme(#000);
+    padding: pixels-to-rem(5px);
+    font-size: unset;
+    font-size: pixels-to-rem(18px);
+  }
+
+  textarea {
+    min-height: 30vh;
+    resize: vertical;
+  }
+
+  [type="submit"] {
+    cursor: pointer;
+
+    @include themes() {
+      color: get-theme(text-color);
+      background-color: get-theme(action-color);
+      box-shadow: 0px -1px 5px darken(get-theme(action-color), 20%) inset;
+
+      &:hover {
+        background-color: darken(get-theme(action-color), 4%);
+      }
+    }
+  }
+
+  label {
+    display: none;
+  }
+}

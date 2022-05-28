@@ -1,0 +1,13 @@
+@use "../utilities/mixins" as *;
+@use "../utilities/functions" as *;
+
+.banner {
+  @include border-theme(#000);
+  padding: pixels-to-rem(5px);
+  grid-area: banner;
+
+  @include themes() {
+    color: get-theme(text-color);
+    background-color: get-theme(warning-color);
+  }
+}

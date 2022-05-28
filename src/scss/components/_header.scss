@@ -1,0 +1,187 @@
+@use "../utilities/mixins";
+@use "../utilities/functions";
+@use "../utilities/variables";
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  @include mixins.themes() {
+    color: functions.get-theme(text-color);
+    background-color: functions.get-theme(second-color);
+  }
+
+  border-bottom: functions.pixels-to-rem(1px) solid #000;
+
+  @include mixins.laptop-size {
+    border-left: functions.pixels-to-rem(1px) solid #000;
+    border-right: functions.pixels-to-rem(1px) solid #000;
+  }
+
+  h1::before {
+    margin-right: 3px;
+    font-family: "Font Awesome 5 Free";
+    content: '\f3cd';
+
+    @include mixins.tablet-portrait-size {
+      content: '\f3fa';
+    }
+
+    @include mixins.laptop-size {
+      content: '\f109';
+    }
+
+    @include mixins.desktop-size {
+      content: '\f390';
+    }
+  }
+
+  ul {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    list-style: none;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+
+    &::before {
+      content: "";
+      opacity: .95;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: -2;
+
+      @include mixins.themes() {
+        color: functions.get-theme(text-color);
+        background-color: functions.get-theme(second-color);
+      }
+
+    }
+  }
+
+  &.open {
+    ul {
+      display: block;
+    }
+
+    li {
+      border-bottom: 1px solid #000;
+      font-size: functions.pixels-to-rem(20px);
+      padding: functions.pixels-to-rem(5px);
+      cursor: pointer;
+
+      @include mixins.themes() {
+        color: functions.get-theme(text-color);
+        background-color: functions.get-theme(second-color);
+      }
+
+      &:hover {
+        @include mixins.themes() {
+          color: functions.get-theme(text-color);
+          background-color: functions.get-theme(second-color);
+        }
+      }
+    }
+  }
+
+  h1,
+  button {
+    display: inline-block;
+    flex: functions.pixels-to-rem(100px) functions.pixels-to-rem(100px) 1;
+  }
+
+  button {
+    all: unset;
+    text-align: center;
+    font-size: functions.pixels-to-rem(25px);
+    min-width: functions.pixels-to-rem(30px);
+
+    padding: functions.pixels-to-rem(3px);
+    margin: functions.pixels-to-rem(3px);
+
+    cursor: pointer;
+
+    @include mixins.themes() {
+      color: functions.get-theme(text-color);
+      background-color: functions.get-theme(second-color);
+    }
+
+    @include mixins.border-theme(#000);
+
+    &:hover {
+      @include mixins.themes() {
+        color: functions.get-theme(text-color);
+        background-color: darken(functions.get-theme(second-color), 10%);
+      }
+    }
+  }
+
+
+  // change menu button style if menu is in open state.
+  header.open {
+    #menu-button {
+      @include mixins.themes() {
+        color: functions.get-theme(text-color);
+        background-color: darken(functions.get-theme(second-color), 10%);
+      }
+    }
+  }
+
+  div {
+    flex: 1;
+
+    &:nth-of-type(2) {
+      text-align: center;
+    }
+
+    &:last-of-type {
+      text-align: end;
+
+      button:nth-of-type(1) {
+        margin-right: -3px;
+      }
+    }
+  }
+
+  a,
+  a:hover,
+  a:visited,
+  a:link,
+  a:active {
+    all: unset;
+    cursor: pointer;
+  }
+
+  h1 {
+    margin: auto;
+  }
+}
+
+
+
+
+
+
+/* this needs to be changed to be inside Header */
+// background for header based off of body width
+body {
+  &::before {
+    content: "";
+    height: functions.pixels-to-rem(43.5px);
+    width: 100%;
+    background-color: darken(#00c181, 8%);
+    border-bottom: functions.pixels-to-rem(1px) solid #000;
+    position: fixed;
+    left: 0px;
+    z-index: -1;
+  }
+}

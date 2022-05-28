@@ -1,26 +1,59 @@
 @use "scss/utilities/utilities-dir" as *;
 @use "scss/base/base-dir" as *;
+@use "scss/components/components-dir" as *;
 
 html {
-  // test to make sure var file is connected
-  background-color: $test-var;
+  font-family: Arial,
+    Helvetica,
+    sans-serif;
 }
 
 body {
-  min-height: 100vh;
+  @include themes() {
+    color: get-theme(text-color);
+    background-color: get-theme(primary-color);
+  }
 
-  // make sure breakpoints are working in browser
-  border: 5px solid black;
-  @include tablet-portrait-size {
-    border: 5px solid red;
-  }
-  @include tablet-landscape-size {
-    border: 5px solid blue;
-  }
+  min-height: 100vh;
+  margin: auto;
+
   @include laptop-size {
-    border: 5px solid green;
+    width: 95%;
   }
+
   @include desktop-size {
-    border: 5px solid yellow;
+    width: 95%;
+  }
+}
+
+#container {
+  width: 100%;
+  display: grid;
+  grid-template:
+    "banner"
+    "form"
+    "results";
+  grid-auto-columns: 1fr;
+  gap: 5px;
+  margin: 5px 0 5px 0;
+  padding: 0px 5px 0px 5px;
+
+  @include tablet-landscape-size {
+    grid-template:
+      "banner banner"
+      "form results";
+  }
+
+  @include laptop-size {
+
+    grid-template:
+      "banner banner banner"
+      "form results results";
+  }
+
+  @include desktop-size {
+    grid-template:
+      "banner banner banner banner"
+      "form results results results";
   }
 }

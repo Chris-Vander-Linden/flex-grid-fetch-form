@@ -1,6 +1,4 @@
 export { fetchWrapperFileTest, FetchWrapper }
-// test export to make sure it is connected.
-const fetchWrapperFileTest = "fetch-wrapper.js is connected.";
 
 class FetchWrapper {
   constructor(baseURL) {
@@ -8,7 +6,6 @@ class FetchWrapper {
   }
 
   get = (endpoint = "") => {
-    console.log("get");
     return this._fetchHelper(endpoint);
   }
   post = (endpoint = "", body = {}) => {
