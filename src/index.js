@@ -1,4 +1,4 @@
-import { FetchWrapper } from './scripts/fetch-wrapper.js';
+import FetchWrapper from './scripts/fetch-wrapper.js';
 import './scripts/nav-bar.js';
 
 // create new instance of FetchWrapper for getting and posting data
