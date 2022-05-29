@@ -1,6 +1,4 @@
-export { fetchWrapperFileTest, FetchWrapper }
-
-class FetchWrapper {
+export class FetchWrapper {
   constructor(baseURL) {
     this.baseURL = baseURL;
   }
