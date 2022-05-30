@@ -36,15 +36,4 @@ export default class FetchWrapper {
       return response.json();
     });
   }
-
-
-
-
-
-
-
-
 }
-
-
-
