@@ -1,16 +1,16 @@
-@use "../utilities/mixins" as *;
-@use "../utilities/functions" as *;
+@use "../utilities/utilities-dir";
+
 
 #create-form-container {
-  @include themes() {
-    color: get-theme(text-color);
-    background-color: get-theme(fourth-color);
+  @include utilities-dir.themes() {
+    color: utilities-dir.get-theme(text-color);
+    background-color: utilities-dir.get-theme(fourth-color);
   }
 
-  @include border-theme(#000);
+  @include utilities-dir.border-theme(#000);
   grid-area: form;
 
-  @include tablet-landscape-size {
+  @include utilities-dir.tablet-landscape-size {
     min-height: 80vh;
   }
 }
@@ -19,12 +19,12 @@
 // might be able to be EXTENDED??????
 form {
   position: sticky;
-  top: pixels-to-rem(43px);
+  top: utilities-dir.pixels-to-rem(43px);
 
   display: grid;
   grid-auto-rows: max-content;
   gap: 5px;
-  padding: pixels-to-rem(5px);
+  padding: utilities-dir.pixels-to-rem(5px);
 
   #create-form-container & {
     padding-bottom: 0px;
@@ -36,10 +36,10 @@ form {
   textarea,
   select,
   [type="submit"] {
-    @include border-theme(#000);
-    padding: pixels-to-rem(5px);
+    @include utilities-dir.border-theme(#000);
+    padding: utilities-dir.pixels-to-rem(5px);
     font-size: unset;
-    font-size: pixels-to-rem(18px);
+    font-size: utilities-dir.pixels-to-rem(18px);
   }
 
   textarea {
@@ -50,13 +50,13 @@ form {
   [type="submit"] {
     cursor: pointer;
 
-    @include themes() {
-      color: get-theme(text-color);
-      background-color: get-theme(action-color);
-      box-shadow: 0px -1px 5px darken(get-theme(action-color), 20%) inset;
+    @include utilities-dir.themes() {
+      color: utilities-dir.get-theme(text-color);
+      background-color: utilities-dir.get-theme(action-color);
+      box-shadow: 0px -1px 5px darken(utilities-dir.get-theme(action-color), 20%) inset;
 
       &:hover {
-        background-color: darken(get-theme(action-color), 4%);
+        background-color: darken(utilities-dir.get-theme(action-color), 4%);
       }
     }
   }

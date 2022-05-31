@@ -1,6 +1,6 @@
-@use "scss/utilities/utilities-dir" as *;
-@use "scss/base/base-dir" as *;
-@use "scss/components/components-dir" as *;
+@use "scss/utilities/utilities-dir";
+@use "scss/base/base-dir";
+@use "scss/components/components-dir";
 
 html {
   font-family: Arial,
@@ -9,19 +9,19 @@ html {
 }
 
 body {
-  @include themes() {
-    color: get-theme(text-color);
-    background-color: get-theme(primary-color);
+  @include utilities-dir.themes() {
+    color: utilities-dir.get-theme(text-color);
+    background-color: utilities-dir.get-theme(primary-color);
   }
 
   min-height: 100vh;
   margin: auto;
 
-  @include laptop-size {
+  @include utilities-dir.laptop-size {
     width: 95%;
   }
 
-  @include desktop-size {
+  @include utilities-dir.desktop-size {
     width: 95%;
   }
 }
@@ -38,20 +38,19 @@ body {
   margin: 5px 0 5px 0;
   padding: 0px 5px 0px 5px;
 
-  @include tablet-landscape-size {
+  @include utilities-dir.tablet-landscape-size {
     grid-template:
       "banner banner"
       "form results";
   }
 
-  @include laptop-size {
-
+  @include utilities-dir.laptop-size {
     grid-template:
       "banner banner banner"
       "form results results";
   }
 
-  @include desktop-size {
+  @include utilities-dir.desktop-size {
     grid-template:
       "banner banner banner banner"
       "form results results results";
