@@ -2,6 +2,12 @@
 
 #result-area {
   grid-area: results;
+  padding: utilities-dir.pixels-to-rem(5px);
+
+  form {
+    // only padding on bottom, since parent container has padding
+    padding: 0 0 utilities-dir.pixels-to-rem(5px) 0;
+  }
 
   @include utilities-dir.themes() {
     background-color: darken(utilities-dir.get-theme(fourth-color), 10%);
