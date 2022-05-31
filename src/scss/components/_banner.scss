@@ -1,13 +1,12 @@
-@use "../utilities/mixins" as *;
-@use "../utilities/functions" as *;
+@use "../utilities/utilities-dir";
 
 .banner {
-  @include border-theme(#000);
-  padding: pixels-to-rem(5px);
+  @include utilities-dir.border-theme(#000);
+  padding: utilities-dir.pixels-to-rem(5px);
   grid-area: banner;
 
-  @include themes() {
-    color: get-theme(text-color);
-    background-color: get-theme(warning-color);
+  @include utilities-dir.themes() {
+    color: utilities-dir.get-theme(text-color);
+    background-color: utilities-dir.get-theme(warning-color);
   }
 }

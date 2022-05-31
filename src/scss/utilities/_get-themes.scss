@@ -1,0 +1,24 @@
+@use "variables";
+// for injecting light and dark themes
+
+// insert this function in @mixin themes to get values of colors from theme map
+
+$theme-map: null;
+
+@mixin themes {
+
+  @each $theme,
+  $map in variables.$themes {
+    $theme-map: $map  !global;
+
+    .#{$theme} & {
+      @content;
+    }
+  }
+
+  $theme-map: null !global;
+}
+
+@function get-theme($key) {
+  @return map-get($theme-map, $key);
+}

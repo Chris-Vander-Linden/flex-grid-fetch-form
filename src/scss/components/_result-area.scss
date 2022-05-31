@@ -1,36 +1,40 @@
-@use "../utilities/mixins" as *;
-@use "../utilities/functions" as *;
+@use "../utilities/utilities-dir";
 
 #result-area {
   grid-area: results;
+  padding: utilities-dir.pixels-to-rem(5px);
 
-  @include themes() {
-    background-color: darken(get-theme(fourth-color), 10%);
+  form {
+    // only padding on bottom, since parent container has padding
+    padding: 0 0 utilities-dir.pixels-to-rem(5px) 0;
   }
 
-  @include border-theme(#000);
+  @include utilities-dir.themes() {
+    background-color: darken(utilities-dir.get-theme(fourth-color), 10%);
+  }
+
+  @include utilities-dir.border-theme(#000);
 
   ul {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    padding: 0px pixels-to-rem(5px) pixels-to-rem(5px) pixels-to-rem(5px);
+    padding: 0px utilities-dir.pixels-to-rem(5px) pixels-to-rem(5px) utilities-dir.pixels-to-rem(5px);
     flex-direction: column;
 
-    @include tablet-portrait-size {
+    @include utilities-dir.tablet-portrait-size {
       flex-direction: row;
     }
 
-    @include tablet-landscape-size {
+    @include utilities-dir.tablet-landscape-size {
       flex-direction: column;
     }
 
-    @include laptop-size {
+    @include utilities-dir.laptop-size {
       flex-direction: row;
-
     }
 
-    @include desktop-size {
+    @include utilities-dir.desktop-size {
       flex-direction: row;
     }
   }
@@ -38,19 +42,19 @@
   li {
     flex: 1 1 40%;
 
-    @include desktop-size {
+    @include utilities-dir.desktop-size {
       flex: 1 1 30%;
     }
 
     list-style: none;
-    padding: pixels-to-rem(5px);
+    padding: utilities-dir.pixels-to-rem(5px);
 
-    @include themes() {
-      color: get-theme(text-color);
-      background-color: get-theme(third-color);
+    @include utilities-dir.themes() {
+      color: utilities-dir.get-theme(text-color);
+      background-color: utilities-dir.get-theme(third-color);
     }
 
-    @include border-theme(#000);
+    @include utilities-dir.border-theme(#000);
 
     box-shadow: 0px 1px 2px rgb(13, 19, 61);
 
