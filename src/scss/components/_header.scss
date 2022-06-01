@@ -10,7 +10,6 @@ header {
   justify-content: center;
   align-items: center;
 
-
   @include utilities-dir.themes() {
     color: utilities-dir.get-theme(text-color);
     background-color: utilities-dir.get-theme(second-color);
@@ -44,13 +43,13 @@ header {
   ul {
     display: none;
     width: 100%;
-    height: 100vh;
+    height: 0;
     position: absolute;
     list-style: none;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
 
-    &::before {
+
+    /*
+    //&::before {
       content: "";
       opacity: .95;
       height: 100%;
@@ -58,12 +57,14 @@ header {
       position: absolute;
       z-index: -2;
 
-      @include utilities-dir.themes() {
-        color: utilities-dir.get-theme(text-color);
-        background-color: utilities-dir.get-theme(second-color);
-      }
-
+    //@include utilities-dir.themes() {
+      color: utilities-dir.get-theme(text-color);
+      background-color: utilities-dir.get-theme(second-color);
     }
+
+  //}
+
+    */
   }
 
   &.open {
@@ -73,19 +74,24 @@ header {
 
     li {
       border-bottom: 1px solid #000;
+
+      &:first-of-type {
+        border-top: 1px solid #000;
+      }
+
       font-size: utilities-dir.pixels-to-rem(20px);
       padding: utilities-dir.pixels-to-rem(5px);
       cursor: pointer;
 
       @include utilities-dir.themes() {
         color: utilities-dir.get-theme(text-color);
-        background-color: utilities-dir.get-theme(second-color);
+        background-color: darken(utilities-dir.get-theme(second-color), 5%);
       }
 
       &:hover {
         @include utilities-dir.themes() {
           color: utilities-dir.get-theme(text-color);
-          background-color: utilities-dir.get-theme(second-color);
+          background-color: darken(utilities-dir.get-theme(second-color), 10%);
         }
       }
     }
@@ -161,25 +167,5 @@ header {
 
   h1 {
     margin: auto;
-  }
-}
-
-
-
-
-
-
-/* this needs to be changed to be inside Header */
-// background for header based off of body width
-body {
-  &::before {
-    content: "";
-    height: utilities-dir.pixels-to-rem(43.5px);
-    width: 100%;
-    background-color: darken(#00c181, 8%);
-    border-bottom: utilities-dir.pixels-to-rem(1px) solid #000;
-    position: fixed;
-    left: 0px;
-    z-index: -1;
   }
 }
