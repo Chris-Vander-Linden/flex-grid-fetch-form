@@ -1,17 +1,11 @@
-# heading 1
+# Flex/Grid Fetch Form
 
-## heading 2
+## *** This project is still in progress ***
 
-### heading 3
+This project was created to demonstrate the following:
 
-#### heading 4
-
-##### heading 5
-
-###### heading 6
-
-Normal text...
-
-[Link Text](link)
-
-![Image Name](Image location)
+* Item 1
+* Item 2
+* Item 3
+  * Sub Item A
+  * Sub Item B
