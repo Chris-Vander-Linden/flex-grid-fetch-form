@@ -46,25 +46,6 @@ header {
     height: 0;
     position: absolute;
     list-style: none;
-
-
-    /*
-    //&::before {
-      content: "";
-      opacity: .95;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      z-index: -2;
-
-    //@include utilities-dir.themes() {
-      color: utilities-dir.get-theme(text-color);
-      background-color: utilities-dir.get-theme(second-color);
-    }
-
-  //}
-
-    */
   }
 
   &.open {

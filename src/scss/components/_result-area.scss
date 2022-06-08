@@ -3,7 +3,6 @@
 #result-area {
   grid-area: results;
 
-
   form {
     padding: utilities-dir.pixels-to-rem(5px);
     border-radius: 3px 3px 0px 0px;
@@ -11,7 +10,6 @@
     @include utilities-dir.themes() {
       background-color: darken(utilities-dir.get-theme(fourth-color), 10%);
     }
-
   }
 
   @include utilities-dir.themes() {
