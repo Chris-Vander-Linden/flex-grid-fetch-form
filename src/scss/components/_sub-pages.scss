@@ -1,0 +1,51 @@
+@use "../utilities/utilities-dir";
+
+#container.sub-page {
+  grid-template: "main-content";
+
+
+  #main-content {
+    grid-area: main-content;
+
+    min-height: 90vh;
+
+    padding: utilities-dir.pixels-to-rem(5px);
+
+    @include utilities-dir.themes() {
+      color: utilities-dir.get-theme(text-color);
+      background-color: utilities-dir.get-theme(third-color);
+    }
+
+    @include utilities-dir.border-theme(#000);
+
+    p {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    // unset the reset for ul and ol on sub pages
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+    }
+
+    ol {
+      list-style-type: decimal;
+      list-style-position: inside;
+    }
+
+    ul ul,
+    ol ul {
+      list-style-type: circle;
+      list-style-position: inside;
+      margin-left: 15px;
+    }
+
+    ol ol,
+    ul ol {
+      list-style-type: lower-latin;
+      list-style-position: inside;
+      margin-left: 15px;
+    }
+  }
+}
