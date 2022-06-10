@@ -4,7 +4,7 @@ export default class FetchWrapper {
   }
 
   get(endpoint = "") {
-    return this._fetchHelper(endpoint);
+    return this._fetchHelper(endpoint, "GET");
   }
   post(endpoint = "", body) {
     return this._fetchHelper(endpoint, "POST", body);
@@ -16,7 +16,7 @@ export default class FetchWrapper {
     return this._fetchHelper(endpoint, "DELETE", body);
   }
 
-  _fetchHelper(endpoint, method = "GET", body) {
+  _fetchHelper(endpoint, method, body) {
     let payload;
 
     method !== "GET" ? payload = {
@@ -26,14 +26,15 @@ export default class FetchWrapper {
       body: JSON.stringify(body)
     } : payload = "";
 
-    return fetch(this.baseURL + endpoint, {
-      method,
-      payload
-    }).then(response => {
-      if (!response.ok) {
-        throw new Error("There was a problem with the server.");
-      }
-      return response.json();
-    });
+    return fetch(this.baseURL + endpoint,
+      {
+        method,
+        payload
+      }).then(response => {
+        if (!response.ok) {
+          throw new Error("There was a problem with the server.");
+        }
+        return response.json();
+      });
   }
 }
