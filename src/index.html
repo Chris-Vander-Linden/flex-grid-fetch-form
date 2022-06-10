@@ -37,37 +37,58 @@
     <div id="container">
       <div class="banner">
         <span
-          ><i class="fa-solid fa-triangle-exclamation"></i> PLEASE NOTE:</span
+          ><i class="fa-solid fa-triangle-exclamation"></i>
+          <b>PLEASE NOTE:</b></span
         >
-        This is a pretend server!!! Changes aren't persisted between calls.
+        When fetching from API, I am using
+        <a href="https://my-json-server.typicode.com/" target="_blank"
+          >My JSON Server</a
+        >. Changes aren't saved to the server.
       </div>
       <div id="create-form-container">
         <form action="">
-          <label for="title">Title:</label>
+          <label for="name">Name:</label>
           <input
             type="text"
-            name="title"
-            id="title"
-            placeholder="Type new book title..."
+            name="name"
+            id="name"
+            placeholder="What is this person's name?"
             required
           />
+          <label for="Job">Job:</label>
+          <input
+            type="text"
+            name="job"
+            id="job"
+            placeholder="What is their job?"
+            required
+          />
+          <label for="email">Person:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="What is their email?"
+            required
+          />
+          <label for="name">Person:</label>
           <label for="title">Body:</label>
           <textarea
             name="body"
             id="body"
-            placeholder="Type new book content..."
+            placeholder="Add person details..."
             required
           ></textarea>
           <button type="submit" name="submit" id="submit">
-            <i class="fa-solid fa-plus"></i> Create New Book
+            <i class="fa-solid fa-plus"></i> Create New Person
           </button>
           <div id="response"></div>
         </form>
       </div>
       <div id="result-area">
         <form id="search-form-container" action="">
-          <label for="search">Search Book:</label>
-          <input type="search" placeholder="Search for book..." id="search" />
+          <label for="search">Search Person:</label>
+          <input type="search" placeholder="Search for person..." id="search" />
         </form>
         <ul></ul>
       </div>
