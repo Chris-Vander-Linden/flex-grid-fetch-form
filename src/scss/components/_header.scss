@@ -42,10 +42,13 @@ header {
 
   ul {
     display: none;
-    width: 100%;
-    height: 0;
     position: absolute;
     list-style: none;
+
+    width: 100%;
+    height: 0;
+
+
   }
 
   &.open {
@@ -53,12 +56,13 @@ header {
       display: block;
     }
 
-    li {
+    a:last-of-type li {
       border-bottom: 1px solid #000;
+    }
 
-      &:first-of-type {
-        border-top: 1px solid #000;
-      }
+    li {
+      border: 1px solid #000;
+      border-bottom: 0px;
 
       font-size: utilities-dir.pixels-to-rem(20px);
       padding: utilities-dir.pixels-to-rem(5px);
