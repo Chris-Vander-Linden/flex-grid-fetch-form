@@ -2,6 +2,8 @@
 
 ## *** This project is still in progress ***
 
+[Here is a link to the site in it's current form](https://jade-choux-5ff118.netlify.app/index.html)
+
 This project was created to demonstrate the following:
 
 * CSS3 
