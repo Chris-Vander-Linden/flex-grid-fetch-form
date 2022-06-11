@@ -21,7 +21,7 @@ header {
     background-color: utilities-dir.get-theme(second-color);
   }
 
-  border-bottom: utilities-dir.pixels-to-rem(1px) solid #000;
+  border: utilities-dir.pixels-to-rem(1px) solid #000;
 
   @include utilities-dir.laptop-size {
     border-left: utilities-dir.pixels-to-rem(1px) solid #000;
@@ -70,6 +70,11 @@ header {
       border: 1px solid #000;
       border-bottom: 0px;
 
+      // make nav items align with header.
+      width: calc(100% + 2px);
+      position: relative;
+      right: 1px;
+
       font-size: utilities-dir.pixels-to-rem(20px);
       padding: utilities-dir.pixels-to-rem(5px);
       cursor: pointer;
@@ -82,8 +87,16 @@ header {
       &:hover {
         @include utilities-dir.themes() {
           color: utilities-dir.get-theme(text-color);
-          background-color: darken(utilities-dir.get-theme(second-color), 10%);
+          background-color: darken(utilities-dir.get-theme(second-color), 15%);
         }
+      }
+    }
+
+    // change menu button style if menu is in open state.
+    button#menu-button {
+      @include utilities-dir.themes() {
+        color: utilities-dir.get-theme(text-color);
+        background-color: darken(utilities-dir.get-theme(second-color), 20%);
       }
     }
   }
@@ -113,17 +126,6 @@ header {
     @include utilities-dir.border-theme(#000);
 
     &:hover {
-      @include utilities-dir.themes() {
-        color: utilities-dir.get-theme(text-color);
-        background-color: darken(utilities-dir.get-theme(second-color), 10%);
-      }
-    }
-  }
-
-
-  // change menu button style if menu is in open state.
-  header.open {
-    #menu-button {
       @include utilities-dir.themes() {
         color: utilities-dir.get-theme(text-color);
         background-color: darken(utilities-dir.get-theme(second-color), 10%);

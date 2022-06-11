@@ -2,7 +2,7 @@ import FetchWrapper from './scripts/fetch-wrapper.js';
 import './scripts/nav-bar.js';
 
 // create new instance of FetchWrapper for getting and posting data
-const API = new FetchWrapper("https://myy-json-server.typicode.com/Chris-Vander-Linden/json-db/");
+const API = new FetchWrapper("https://my-json-server.typicode.com/Chris-Vander-Linden/json-db/");
 
 // elements for Person search form
 const resultArea = document.querySelector("#result-area ul");
@@ -40,7 +40,7 @@ const render = (search) => {
   }).finally(() => {
     // if there are no matches display default message
     if (resultArea.innerHTML === "") {
-      resultArea.innerHTML = `<li><i class="fa-solid fa-triangle-exclamation"></i> Sorry, we couldn\'t find any data based off of that name: "${search
+      resultArea.innerHTML = `<li><i class="fa-solid fa-triangle-exclamation"></i> Sorry, we couldn\'t find any data based off of the name: "${search
         }".</li>`;
     }
   });
