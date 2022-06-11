@@ -64,10 +64,6 @@
     background-color: #ededed;
     box-shadow: 0px 0px 2px #5b5b5b;
 
-    figcaption {
-      font-style: italic;
-    }
-
     @include utilities-dir.tablet-landscape-size {
       width: 40%;
       float: left;
