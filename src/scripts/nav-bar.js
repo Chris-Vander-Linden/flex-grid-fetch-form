@@ -15,11 +15,55 @@ increaseTextSize.addEventListener("click", event => {
   ((docFontSize / 16) < 1.5) ? documentElement.style = `font-size: ${(docFontSize + 1) / 16 + "rem"}` : ``;
 });
 
-toggleTheme.addEventListener("click", event => {
-  // toggle dark-theme and light-theme
-  documentElement.classList.contains("dark-theme") ? documentElement.classList.replace("dark-theme", "light-theme") : documentElement.classList.replace("light-theme", "dark-theme");
 
-  // toggle theme button in menu
+
+
+
+
+
+toggleTheme.addEventListener("click", event => {
+
   const toggleButton = event.currentTarget;
-  documentElement.classList.contains("dark-theme") ? toggleButton.innerHTML = `<i class="fa-solid fa-toggle-on"></i>` : toggleButton.innerHTML = `<i class="fa-solid fa-toggle-off"></i>`;
+  // toggle dark-theme and light-theme
+  if (documentElement.classList.contains("light-theme")) {
+    localStorage.setItem('theme', 'dark-theme');
+    documentElement.classList.replace("light-theme", "dark-theme");
+    // toggle theme button in menu
+    toggleButton.innerHTML = `<i class="fa-solid fa-toggle-on"></i>`;
+  } else {
+    localStorage.setItem('theme', 'light-theme');
+    documentElement.classList.replace("dark-theme", "light-theme");
+    // toggle theme button in menu
+    toggleButton.innerHTML = `<i class="fa-solid fa-toggle-off"></i>`;
+  }
+  console.log(localStorage.getItem('theme'));
 });
+
+const initTheme = () => {
+  console.log(localStorage.getItem('theme'));
+
+
+  if (localStorage.getItem('theme') === "dark-theme") {
+    localStorage.setItem('theme', 'dark-theme');
+    documentElement.classList.replace("light-theme", "dark-theme");
+    // toggle theme button in menu
+    toggleTheme.innerHTML = `<i class="fa-solid fa-toggle-on"></i>`;
+  } else {
+    localStorage.setItem('theme', 'light-theme');
+    documentElement.classList.replace("dark-theme", "light-theme");
+    // toggle theme button in menu
+    toggleTheme.innerHTML = `<i class="fa-solid fa-toggle-off"></i>`;
+  }
+
+
+
+
+
+
+
+
+
+
+}
+
+initTheme();
