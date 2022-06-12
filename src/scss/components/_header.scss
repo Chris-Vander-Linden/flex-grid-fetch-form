@@ -85,9 +85,11 @@ header {
       }
 
       &:hover {
-        @include utilities-dir.themes() {
-          color: utilities-dir.get-theme(text-color);
-          background-color: darken(utilities-dir.get-theme(second-color), 15%);
+        @include utilities-dir.laptop-size {
+          @include utilities-dir.themes() {
+            color: utilities-dir.get-theme(text-color);
+            background-color: darken(utilities-dir.get-theme(second-color), 15%);
+          }
         }
       }
     }
@@ -126,9 +128,11 @@ header {
     @include utilities-dir.border-theme(#000);
 
     &:hover {
-      @include utilities-dir.themes() {
-        color: utilities-dir.get-theme(text-color);
-        background-color: darken(utilities-dir.get-theme(second-color), 10%);
+      @include utilities-dir.laptop-size {
+        @include utilities-dir.themes() {
+          color: utilities-dir.get-theme(text-color);
+          background-color: darken(utilities-dir.get-theme(second-color), 10%);
+        }
       }
     }
   }
