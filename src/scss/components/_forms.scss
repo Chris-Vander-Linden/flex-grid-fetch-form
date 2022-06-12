@@ -33,7 +33,8 @@ form {
   input,
   textarea,
   select,
-  [type="submit"] {
+  [type="submit"],
+  [type="search"] {
     @include utilities-dir.border-theme(#000);
     padding: utilities-dir.pixels-to-rem(5px);
     font-size: unset;
