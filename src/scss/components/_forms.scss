@@ -15,11 +15,9 @@
   }
 }
 
-
-// might be able to be EXTENDED??????
 form {
   position: sticky;
-  top: utilities-dir.pixels-to-rem(43px);
+  top: utilities-dir.pixels-to-rem(44px);
 
   display: grid;
   grid-auto-rows: max-content;
