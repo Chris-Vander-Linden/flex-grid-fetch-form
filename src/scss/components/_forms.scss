@@ -50,6 +50,9 @@ form {
     */
 
     /* Remove default */
+
+    appearance: textfield;
+    -webkit-appearance: textfield;
     appearance: none;
     -webkit-appearance: none;
 
