@@ -50,13 +50,10 @@ form {
     */
 
     /* Remove default */
+    background-image: none;
     appearance: none;
-    -webkit-appearance: none;
-
     border: unset;
-    -webkit-border-border: unset;
     border-radius: unset;
-    -webkit-border-radius: unset;
 
     @include utilities-dir.border-theme(#000);
     padding: utilities-dir.pixels-to-rem(5px);
