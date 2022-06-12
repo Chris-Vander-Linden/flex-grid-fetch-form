@@ -25,10 +25,8 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-}
-
-input[type="search"] {
-  border-radius: 3px;
+  appearance: none;
+  all: unset;
 }
 
 * {
@@ -37,14 +35,6 @@ input[type="search"] {
   padding: 0;
 
   font-family: typography.$font-stack;
-}
-
-input {
-  appearance: none;
-}
-
-input[type="search"] {
-  border-radius: 3px;
 }
 
 p {
