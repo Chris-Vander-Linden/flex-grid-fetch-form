@@ -145,6 +145,8 @@ header {
     }
 
     &:last-of-type {
+      // required min-width to prevent breaking layout in mobile
+      min-width: 87px;
       text-align: end;
 
       button:nth-of-type(1) {
