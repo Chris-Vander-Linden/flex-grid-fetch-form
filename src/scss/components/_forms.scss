@@ -54,7 +54,7 @@ form {
     -webkit-appearance: none;
     appearance: none;
     border: unset;
-    border-radius: 0;
+    border-radius: unset;
 
     @include utilities-dir.border-theme(#000);
     padding: utilities-dir.pixels-to-rem(5px);
