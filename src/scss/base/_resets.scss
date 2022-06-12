@@ -389,6 +389,10 @@ template {
   font-family: typography.$font-stack;
 }
 
+input {
+  appearance: none;
+}
+
 p {
   padding: 5px;
 }
