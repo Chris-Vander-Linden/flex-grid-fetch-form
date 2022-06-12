@@ -18,8 +18,5 @@
     "@parcel/transformer-sass": "^2.5.0",
     "parcel": "^2.5.0",
     "sass": "^1.51.0"
-  },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
   }
 }
