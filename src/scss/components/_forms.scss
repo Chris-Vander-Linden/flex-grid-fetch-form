@@ -35,7 +35,7 @@ form {
   select,
   [type="submit"],
   input[type="search"],
-  //input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-decoration {
     /*
     border: none;
@@ -50,9 +50,6 @@ form {
     */
 
     /* Remove default */
-
-    appearance: textfield;
-    -webkit-appearance: textfield;
     appearance: none;
     -webkit-appearance: none;
 
