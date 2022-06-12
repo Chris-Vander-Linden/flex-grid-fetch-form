@@ -34,7 +34,9 @@ form {
   textarea,
   select,
   [type="submit"],
-  input[type="search"] {
+  input[type="search"],
+  //input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
     /*
     border: none;
     -webkit-border-radius: 0px;
@@ -46,6 +48,9 @@ form {
     -webkit-appearance: none;
     appearance: none;
     */
+
+    /* Remove default */
+    -webkit-appearance: none;
 
     border: unset;
     -webkit-border-border: unset;
