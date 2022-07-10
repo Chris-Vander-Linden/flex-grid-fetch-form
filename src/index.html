@@ -14,24 +14,32 @@
   <body>
     <header>
       <div>
-        <button id="menu-button"><i class="fa-solid fa-bars"></i></button>
+        <button type="button" title="toggle-menu" id="menu-button">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <ul>
-          <a href="./"
-            ><li><i class="fa-solid fa-caret-right"></i> Home</li></a
-          >
-          <a href="./pages/about-project.html"><li>About this Project</li></a>
-          <a href="./pages/about-me.html"><li>About Me</li></a>
-          <a href="./pages/about-cat.html"><li>About my Cat</li></a>
+          <li>
+            <a href="./"><i class="fa-solid fa-caret-right"></i> Home</a>
+          </li>
+          <li>
+            <a href="./pages/about-project.html">About this Project</a>
+          </li>
+          <li>
+            <a href="./pages/about-me.html">About Me</a>
+          </li>
+          <li>
+            <a href="./pages/about-cat.html">About my Cat</a>
+          </li>
         </ul>
       </div>
       <div>
         <a href="#"><h1>Grid/Flex</h1></a>
       </div>
       <div>
-        <button id="toggle-theme-button">
+        <button type="button" title="toggle-theme" id="toggle-theme-button">
           <i class="fa-solid fa-toggle-off"></i>
         </button>
-        <button id="font-size-button">
+        <button type="button" title="increase-font-size" id="font-size-button">
           <i class="fa-solid fa-arrow-up-right-dots"></i>
         </button>
       </div>
@@ -43,7 +51,10 @@
           <b>PLEASE NOTE:</b></span
         >
         When fetching from API, I am using
-        <a href="https://my-json-server.typicode.com/" target="_blank"
+        <a
+          href="https://my-json-server.typicode.com/"
+          target="_blank"
+          rel="noopener"
           >My JSON Server</a
         >. Changes aren't saved to the server.
       </div>

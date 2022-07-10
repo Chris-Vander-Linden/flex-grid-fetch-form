@@ -63,7 +63,7 @@ header {
       display: block;
     }
 
-    a:last-of-type li {
+    li:last-of-type {
       border-bottom: 1px solid #000;
     }
 
@@ -76,23 +76,28 @@ header {
       position: relative;
       right: 1px;
 
-      font-size: utilities-dir.pixels-to-rem(20px);
-      padding: utilities-dir.pixels-to-rem(5px);
-      cursor: pointer;
 
-      @include utilities-dir.themes() {
-        color: utilities-dir.get-theme(text-color);
-        background-color: darken(utilities-dir.get-theme(second-color), 5%);
-      }
+      a {
+        display: inline-block;
+        width: 100%;
+        font-size: utilities-dir.pixels-to-rem(20px);
+        padding: utilities-dir.pixels-to-rem(5px);
+        cursor: pointer;
 
-      &:hover {
-        @include utilities-dir.laptop-size {
+        @include utilities-dir.themes() {
+          color: utilities-dir.get-theme(text-color);
+          background-color: darken(utilities-dir.get-theme(second-color), 5%);
+        }
+
+        &:hover {
           @include utilities-dir.themes() {
             color: utilities-dir.get-theme(text-color);
             background-color: darken(utilities-dir.get-theme(second-color), 15%);
           }
         }
       }
+
+
     }
 
     // change menu button style if menu is in open state.
