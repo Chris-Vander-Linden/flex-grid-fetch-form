@@ -79,9 +79,12 @@ header {
 
       a {
         display: inline-block;
+
+        box-sizing: border-box;
         width: 100%;
-        font-size: utilities-dir.pixels-to-rem(20px);
         padding: utilities-dir.pixels-to-rem(5px);
+
+        font-size: utilities-dir.pixels-to-rem(20px);
         cursor: pointer;
 
         @include utilities-dir.themes() {
