@@ -1,24 +1,30 @@
 @use "variables";
-// for injecting light and dark themes
+// for injecting light and dark themes.
 
-// insert this function in @mixin themes to get values of colors from theme map
-
+// declare var in global scope.
 $theme-map: null;
 
 @mixin themes {
 
+  // loop through 2 times, since there are 2 themes in outer map.
   @each $theme,
-  $map in variables.$themes {
-    $theme-map: $map  !global;
+  $color in variables.$themes {
 
+    // assign inner light and dark theme maps to global var, so inner function has access to them each time running through the loop.
+    $theme-map: $color  !global;
+
+    // create light/dark theme class selector (on html element) with interpolation and parent selector.
     .#{$theme} & {
+      // use get-theme function to get color from map for both the light and dark themes.  Example ussage... color: <name-space>.get-theme(text-color);
       @content;
     }
   }
 
+  // reset global var.
   $theme-map: null !global;
 }
 
+// use this function inside mixin to get inner map for light and dark themes.
 @function get-theme($key) {
   @return map-get($theme-map, $key);
 }
